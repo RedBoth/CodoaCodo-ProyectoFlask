@@ -1,0 +1,154 @@
+
+/* Banner contact */
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100px;
+}
+.title h2 {
+  text-transform: uppercase;
+  font-family: "Suez One", serif;
+  font-size: 3.5rem;
+  opacity: 80%;
+}
+.contact-us {
+  color: var(--black);
+  opacity: 80%;
+}
+.validation-form {
+  color: var(--black);
+}
+#banner-contact {
+  background-image: url(../static/img/destinations/c-humedales3.webp);
+  background-position: center;
+}
+/*.container {
+  background-color: var(--white);
+  width: 80%;
+  margin: 40px auto;
+  border-radius: 20px;
+}*/
+.container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: auto; 
+  margin: 40px 0;
+}
+
+#form, .response {
+  background-color: var(--lightgray); /*color de fondo del formulario */
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*sombra*/
+  padding: 40px;
+  width: 50%;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 8px;
+  border: 1px solid var(--gray); /* Borde */
+  border-radius: 5px; /* Borde redondeado */
+}
+
+#consulta {
+  display: flex;
+}
+
+textarea {
+  height: 100%; /* Establecer una altura predeterminada */
+  resize: vertical; /* Permitir que el textarea sea redimensionable verticalmente */
+}
+
+label {
+  font-weight: bold;
+  color: var(--gray);
+}
+div > span {
+  margin-bottom: 10px;
+}
+/*botones */
+input[type="submit"] {
+  background-color: var(--green); /*color de fondo */
+  color: var(--white); /*color del texto */
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; /*borde redondeado */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /*Transición*/
+  margin-bottom: 8px;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--lightgreen); /* Cambiar el color de fondo al pasar el mouse */
+}
+
+fieldset {
+  margin-top: 15px;
+  padding: 0 10px;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--gray);
+}
+
+fieldset label {
+  font-weight: normal;
+}
+
+/*radio buttons */
+input[type="radio"] {
+  margin: 10px 5px 10px 5px;
+}
+#radio-travel {
+  margin-right: 20px;
+}
+
+/* Mensajes de validacion */
+.error {
+  color: salmon;
+  display: block;
+}
+.invalid {
+  border: 1px solid salmon;
+  box-shadow: 0 0 8px salmon;
+}
+
+/* Validation Form */
+.validation-form {
+  height: auto;
+  text-align: center;
+}
+
+.validation {
+  height: 60vh;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  #form {
+    width: 75%;
+  }
+}
+@media (max-width: 550px) {
+  #form, .response {
+    width: 100%;
+    margin: 0 10px;
+  }
+  .title h2 {
+    font-size: 3rem;
+  }
+  #consulta {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/11d8a81032.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/styles.css" />
+    <title>GotTravel</title>
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <main>
+      <!-- Banner y titulo -->
+      <section id="hero">
+        <h1>Descubrí Argentina!</h1>
+        <h2>Elegí tu próximo destino!</h2>
+      </section>
+      <!-- Tarjetas -->
+      <section id="cards-grid">
+        <a href="{{url_for('servicios')}}">
+          <div class="card">
+            <div class="card-header">
+              <h1>Comodidad</h1>
+              <p>
+                Descubre una experiencia sin complicaciones que te permitirá disfrutar al máximo cada momento de tu viaje
+              </p>
+            </div>
+            <div class="card-image">
+              <img src="../static/img/index/imagenHotel.jpg" alt="Hotel">
+            </div>
+          </div>
+        </a>
+        <a href="{{url_for('servicios')}}">
+          <div class="card" id="second-card">
+            <div class="card-header">
+              <h1>Seguridad</h1>
+              <p>
+                Te garantizamos tranquilidad y comodidad en todas las etapas de tu viaje para que solo te preocupes de divertirte
+              </p>
+            </div>
+            <div class="card-image">
+              <img src="../static/img/index/imagenAvion.webp" alt="Avion">
+            </div>
+          </div>
+        </a>
+        <a href="{{url_for('servicios')}}">
+          <div class="card" id="third-card">
+            <div class="card-header">
+              <h1>Diversion</h1>
+              <p>
+                ¡Aprovecha la oportunidad perfecta para relajarte, explorar y sumergirte en nuevas experiencias inolvidables!
+              </p>
+            </div>
+            <div class="card-image">
+              <img src="../static/img/index/imagenExcursion.webp" alt="Excursion">
+            </div>
+          </div>
+        </a>
+      </section>
+      <!-- Video -->
+      <section id="how-it-works">
+        <iframe
+          src="https://www.youtube.com/embed/YDL8HbY9ENU?si=mlAskQi1gZtaZQm6"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <!-- Destinos mas visitados-->
+      <section id="most-visited">
+        <h1 id="most-visited-header">Los destinos más visitados</h1>
+        <div class="container">
+          <div class="mini-card">
+            <h3>Bariloche</h3>
+            <div class="img-card">
+              <img src="../static/img/index/Bariloche.webp" alt="Bariloche" />
+            </div>
+          </div>
+          <div class="mini-card">
+            <h3>Iguazú</h3>
+            <div class="img-card">
+              <img src="../static/img/index/Iguazu.jpg" alt="Cataratas del Iguazú" />
+            </div>
+          </div>
+          <div class="mini-card">
+            <h3>Glaciar Perito Moreno</h3>
+            <div class="img-card">
+              <img src="../static/img/index/GlaciarPeritoMoreno.jpg" alt="Glaciar Perito Moreno"/>
+            </div>
+          </div>
+          <div class="mini-card">
+            <h3>Salto del Agrio</h3>
+            <div class="img-card">
+              <img src="../static/img/index/SaltodelAgrioNeuquen.jpg" alt="Salto del Agrio - Neuquen"/>
+            </div>
+          </div>
+          <div class="mini-card">
+            <h3>Cafayate</h3>
+            <div class="img-card">
+              <img src="../static/img/index/d-cafayate-min.jpeg" alt="Ushuaia" />
+            </div>
+          </div>
+          <div class="mini-card">
+            <h3>Buenos Aires</h3>
+            <div class="img-card">
+              <img src="../static/img/index/d-ba-min.png" alt="Capital de Buenos Aires" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <button class="scroll-up"><i class="fa-solid fa-circle-chevron-up"></i></button>
+    </main>
+    {% include 'footer.html' %}
+    <script src="../static/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/11d8a81032.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/styles.css" />
+    <title>GotTravel</title>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar" class="nav">
+        <a href="{{url_for('index')}}" id="logo">
+          <img src="../static/img/Logo-removebg.png" alt="Logo GotTravel"/>
+        </a>
+        <!--NavBar Desktop-->
+        <ul class="nav-list" id="nav-desktop">
+          <li><a href="{{url_for('destinos')}}">Destinos</a></li>
+          <li><a href="{{url_for('servicios')}}">Servicios</a></li>
+          <li><a href="{{url_for('contacto')}}">Contactanos</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+        </ul>
+        <!--NavBar Mobile-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-hamburger">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul class="nav-list" id="nav-mobile">
+          <li><a href="{{url_for('destinos')}}">Destinos</a></li>
+          <li><a href="{{url_for('servicios')}}">Servicios</a></li>
+          <li><a href="{{url_for('contacto')}}">Contactanos</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+        </ul>
+      </nav>
+    </header>
+    <script src="app.js"></script>
+  </body>
+</html>
