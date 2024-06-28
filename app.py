@@ -23,5 +23,9 @@ def contacto():
 def validacionform():
   return render_template('validation-form.html')
 
+@app.route('/viajes')
+def viajes():
+  return render_template('viajes/viajes.html')
+
 if __name__=='__main__':
   app.run(debug=True)
