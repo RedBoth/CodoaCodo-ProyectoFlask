@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template, request,redirect, send_from_directory
 from flask_mysqldb import MySQL
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -9,7 +10,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'gottravel'
 ### Puerto MySQL en Xampp
-app.config['MYSQL_PORT'] = 3307
+#app.config['MYSQL_PORT'] = 3307
 
 mysql = MySQL(app)
 
@@ -46,6 +47,31 @@ def viajes():
   cursor.close()
   
   return render_template('viajes/viajes.html', viajes=db_viajes)
+
+@app.route('/create')
+def create():
+  return render_template('viajes/create.html')
+
+@app.route('/store', methods=['POST'])
+def storage():
+  #Recibir datos del formulario y almacenarlos en variables
+  destino = request.form['txtDestino'];
+  fechaInicio = datetime.strptime(request.form['txtFechaInicio'], '%Y-%m-%d');
+  fechaFin = datetime.strptime(request.form['txtFechaFin'], '%Y-%m-%d');
+  pasajeros = request.form['txtPasajeros'];
+  #Ordenar los datos
+  datos = (destino, fechaInicio, fechaFin, pasajeros);
+  #Almacenar datos en la DB
+  sql = "INSERT INTO `gottravel`.`viajes`\
+        (`id`, `destino`, `fechaInicio`, `fechaFin`, `numPasajeros`)\
+        VALUES (NULL, %s, %s, %s, %s);"
+  conn  = mysql.connection;
+  cursor = conn.cursor();
+  cursor.execute(sql, datos);
+  conn.commit();
+  cursor.close()
+  #Redireccion a viajes
+  return redirect("/viajes");
 
 if __name__=='__main__':
   app.run(debug=True)
