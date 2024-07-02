@@ -48,10 +48,20 @@ def viajes():
   
   return render_template('viajes/viajes.html', viajes=db_viajes)
 
+@app.route('/destroy/<int:id>')
+def destroy(id):
+  conn = mysql.connection;
+  cursor = conn.cursor();
+  cursor.execute("DELETE FROM `gottravel`.`viajes` WHERE id=%s", (id,))
+  conn.commit()
+  cursor.close()
+  return redirect("/viajes");
+
+#Creacion de registros
 @app.route('/create')
 def create():
   return render_template('viajes/create.html')
-
+#Guardar registros
 @app.route('/store', methods=['POST'])
 def storage():
   #Recibir datos del formulario y almacenarlos en variables

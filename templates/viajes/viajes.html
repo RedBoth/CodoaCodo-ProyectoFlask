@@ -47,7 +47,8 @@
             <td>{{viaje[2]}}</td>
             <td>{{viaje[3]}}</td>
             <td>{{viaje[4]}}</td>
-            <td><a class="btn btn-warning"><i class="fa-solid fa-pen"></i></a> <a class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a></td>
+            <td><a class="btn btn-warning"><i class="fa-solid fa-pen"></i></a>
+                <a href="/destroy/{{viaje[0]}}"  class="btn btn-danger" onclick="return confirm('¿Desea eliminar este registro de viaje?')"><i class="fa-solid fa-trash-can"></i></a></td>
           </tr>
           {% endfor %}
         </tbody>
