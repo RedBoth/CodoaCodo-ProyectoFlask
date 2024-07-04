@@ -38,7 +38,7 @@
   margin: 40px 0;
 }
 
-#form, .response {
+#form, .response, #form-create {
   background-color: var(--lightgray); /*color de fondo del formulario */
   border-radius: 10px; /* Borde redondeado */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /*sombra*/
@@ -48,6 +48,8 @@
 
 input[type="text"],
 input[type="email"],
+input[type="number"],
+input[type="date"],
 select,
 textarea {
   width: 100%;
@@ -151,4 +153,11 @@ input[type="radio"] {
     display: flex;
     flex-direction: column;
   }
+}
+
+/** CREAR VIAJE **/
+#banner-create {
+  background-image: url(../static/img/services/vuelo-banner2.webp);
+  background-size: 110%;
+  background-position: left;
 }

@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, request,redirect, send_from_directory
+from flask import render_template, request,redirect
 from flask_mysqldb import MySQL
 from datetime import datetime
 
@@ -10,7 +10,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'gottravel'
 ### Puerto MySQL en Xampp
-#app.config['MYSQL_PORT'] = 3307
+app.config['MYSQL_PORT'] = 3307
 
 mysql = MySQL(app)
 

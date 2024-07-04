@@ -1,11 +1,30 @@
-<form action="/store" method="post" enctype="multipart/form-data">
-    Destino:
-    <input type="text" name="txtDestino" id="txtDestino"><br>
-    Fecha de inicio:
-    <input type="date" name="txtFechaInicio" id="txtFechaInicio"><br>
-    Fecha de fin:
-    <input type="date" name="txtFechaFin" id="txtFechaFin"><br>
-    Pasajeros:
-    <input type="number" name="txtPasajeros" id="txtPasajeros"><br>
-    <input type="submit" value="Agregar">
-</form>
+<html lang="es">
+  <head>
+    <title>GotTravel Crear Viaje</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="../../static/form-style.css">
+  </head>
+  <body>
+    {% include 'header.html' %}
+    <div id="banner-create" class="title create" >
+      <h2>Crear Viaje</h2>
+    </div>
+    <div class="container">
+      <form id="form-create" action="/store" method="post" enctype="multipart/form-data">
+        <label for="txtDestino">Destino:</label>
+        <input type="text" name="txtDestino" id="txtDestino"><br>
+        <label for="txtFechaInicio">Fecha Inicio:</label>
+        <input type="date" name="txtFechaInicio" id="txtFechaInicio"><br>
+        <label for="txtFechaFin">Fecha Fin:</label>
+        <input type="date" name="txtFechaFin" id="txtFechaFin"><br>
+        <label for="txtPasajeros">N° Pasajeros:</label>
+        <input type="number" name="txtPasajeros" id="txtPasajeros"><br>
+        <input type="submit" value="Agregar">
+      </form>
+    </div>
+    {% include 'footer.html' %}
+  </body>
+</html>
